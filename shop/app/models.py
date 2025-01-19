@@ -23,7 +23,7 @@ class Category(models.Model):
     def get_descendants(self):
         """Возвращает всех потомков категории (включая подкатегории всех уровней)."""
         descendants = set()
-        subcategories = self.subcategories.all()
+        subcategories = self.children.all()
         for subcategory in subcategories:
             descendants.add(subcategory)
             descendants.update(subcategory.get_descendants())
