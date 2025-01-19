@@ -71,10 +71,6 @@ class GroupProduct(Product):
         choices=PricingRule.choices,
         default=PricingRule.PERCENT_DISCOUNT,
     )
-    discount_value = models.DecimalField(
-        max_digits=5, decimal_places=2, null=True, blank=True,
-        help_text="Скидка в %, если выбрано 'Скидка в %', либо каждый N-й товар бесплатный."
-    )
 
     def get_price(self):
         """Формирует цену группы товаров."""
