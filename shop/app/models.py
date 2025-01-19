@@ -53,7 +53,7 @@ class Category(models.Model):
 class Product(models.Model):
     title = models.CharField(max_length=255)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    price = models.DecimalField('Price', decimal_places=2)
+    price = models.DecimalField('Price', max_digits=2, decimal_places=2)
 
     def get_price(self):
         """Возвращает цену товара."""
@@ -69,7 +69,7 @@ class GroupProduct(Product):
     pricing_rule = models.CharField(
         max_length=50,
         choices=PricingRule.choices,
-        default=PricingRule.PERCENT_DISCOUNT,
+        default=PricingRule.DISCOUNT_10,
     )
 
     def get_price(self):
