@@ -1,0 +1,15 @@
+[project]
+name = "123"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "django>=5.1.5",
+    "django-extensions>=3.2.3",
+    "graphviz>=0.20.3",
+    "lint>=1.2.1",
+    "make>=0.1.6.post2",
+    "pydotplus>=2.0.2",
+    "requests>=2.32.3",
+]
